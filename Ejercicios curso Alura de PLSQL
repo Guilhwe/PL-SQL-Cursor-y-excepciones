@@ -1,0 +1,12 @@
+Cree una procedure para formatar los digitos 68090 a 68/09-0.
+
+CREATE OR REPLACE PROCEDURE FORATACION
+(p_CNPJ IN CLIENTE.CNPJ%type,
+p_CNPJ_SALIDA OUT CLIENTE.CNPJ%type)
+IS
+BEGIN
+p_CNPJ_SALIDA := 
+SUBSTR(p_CNPJ, 1,2)||'/'||
+SUBSTR(P_CNPJ, 3,2)||'-'||
+SUBSTR(p_CNPJ, 5,1);
+END;
